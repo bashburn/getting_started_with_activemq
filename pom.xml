@@ -165,6 +165,26 @@
 
     <profiles>
         <profile>
+            <id>performance-test</id>
+
+            <build>
+                <defaultGoal>activemq:run</defaultGoal>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.activemq.tooling</groupId>
+                        <artifactId>activemq-maven-plugin</artifactId>
+                        <configuration>
+                            <configUri>xbean:file:conf/activemq-performance-test.xml</configUri>
+                            <systemProperties>
+
+                            </systemProperties>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>broker-failover1</id>
 
             <build>
